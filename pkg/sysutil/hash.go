@@ -34,7 +34,7 @@ func GenerateID(n int) (string, error) {
 
 // VethPairNames returns "vh-<id>" (host) and "vn-<id>" (namespace),
 // checking that names fit within linux IFNAMSIZ limit (<= 15 chars).
-func VethPairNames(id string) (hostVeth, nsVeth string, error) {
+func VethPairNames(id string) (hostVeth, nsVeth string, err error) {
 	if id == "" {
 		return "", "", ErrEmptyID
 	}
